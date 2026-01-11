@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Gugu ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffd1dc, #ffe4e1);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* MUSIC BUTTON */
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff5c8a;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    padding: 70px 20px 40px;
+}
+
+.hero h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+}
+
+.hero h2 {
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.heart {
+    font-size: 3em;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.25);
+    border-radius: 25px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 750px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* TYPING TEXT */
+#typing {
+    font-size: 1.2em;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    margin: 40px 20px;
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="tum_hi_ho.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="playMusic()">🎶 Play Music ❤️</button>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Happy Birthday 🎉</h1>
+    <h2>My Gugu 🐼❤️</h2>
+    <div class="heart">❤️</div>
+    <p>27 January 2009</p>
+</div>
+
+<!-- LOVE LETTER -->
+<div class="card">
+    <div id="typing"></div>
+</div>
+
+<!-- PHOTOS -->
+<div class="card">
+    <h2>My Favorite Memories 💕</h2>
+    <div class="gallery">
+        <img src="img1.jpg">
+        <img src="img2.jpg">
+        <img src="img3.jpg">
+        <img src="img4.jpg">
+        <img src="img5.jpg">
+    </div>
+</div>
+
+<div class="footer">
+    Made with endless love 💖<br>
+    Forever yours, <b>Aarav</b>
+</div>
+
+<script>
+/* MUSIC */
+function playMusic() {
+    document.getElementById("bgMusic").play();
+}
+
+/* TYPING EFFECT */
+const text = `Mele kakeee ka birthday hai aajjjj hurreeyyyy 🥹🎂
+
+I am soooo excited yaaarrrr 😭❤️  
+I want to make this birthday the most precious one for you, melee guggeeee 🐼🫂  
+
+I looovveeee juuuuu theeee mosstttt 💋💋  
+You are my happiness, my peace, my safe place 🥹❤️  
+
+Tum meri duniya ho…  
+Tum hi ho, ab tum hi ho 🌙✨  
+
+No matter what happens, I’ll always be right here, loving you endlessly 🫂  
+Happy Birthday my beautiful Gugu ❤️`;
+
+let i = 0;
+const speed = 40;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+typeWriter();
+</script>
+
+</body>
+</html>
